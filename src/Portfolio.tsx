@@ -1,14 +1,12 @@
 import React from 'react';
-import { Navbar } from './components/navbar';
-import { Footer } from './components/footer';
+import { BrowserRouter } from 'react-router-dom';
+import { AppRouter } from './components/routers/AppRouter';
 
-const Portfolio: React.FC = () => {
+export const Portfolio: React.FC = () => {
   return (
     <>
-      <Navbar />
-      <Footer />
+      <BrowserRouter><AppRouter /></BrowserRouter>
+
     </>
   );
 };
-
-export default Portfolio;
