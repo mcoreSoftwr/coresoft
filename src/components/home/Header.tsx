@@ -3,7 +3,7 @@ import { MobileMenu } from "./MobileMenu";
 
 export const Header: React.FC = () => {
     return (
-        <header className="top-0 sticky w-full z-30 md:bg-gray-800 shadow-gray-50 bg-gray-900">
+        <header className="top-0 sticky w-full z-30  shadow-gray-50 bg-gray-900">
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="flex items-center justify-between h-20">
                     {/* Site branding */}
