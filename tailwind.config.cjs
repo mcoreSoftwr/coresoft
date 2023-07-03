@@ -12,6 +12,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'gray-50': '0 0 1px rgba(0, 0, 0, 0.5)',
+      },
       colors: {
         gray: {
           100: '#EBF1F5',
@@ -24,16 +27,16 @@ module.exports = {
           800: '#25282C',
           900: '#151719',
         },
-        purple: {
-          100: '#F4F4FF',
-          200: '#E2E1FF',
-          300: '#CBCCFF',
-          400: '#ABABFF',
-          500: '#8D8DFF',
-          600: '#5D5DFF',
-          700: '#4B4ACF',
-          800: '#38379C',
-          900: '#262668',
+        blue: {
+          100: '#dbeafe',
+          200: '#bfdbfe',
+          300: '#93c5fd',
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
+          800: '#1e40af',
+          900: '#1e3a8a',
         },
       },
       spacing: {

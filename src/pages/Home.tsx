@@ -15,11 +15,11 @@ export const Home: React.FC = () => {
   }, []);
   return (
     <>
-      <div  className="flex flex-col min-h-screen justify-between">
+      <div  className="flex flex-col min-h-screen font-inter antialiased bg-gray-800 text-gray-200 tracking-tight justify-between">
         <Header />
         <Hero />
         <Features />
-        <Zigzag />
+       {/* <Zigzag /> */}
         <Testimonials />
         <main className="flex-grow">
         </main>
