@@ -1,6 +1,6 @@
-import TestimonialImage01 from '../../public/images/testimonial-01.jpg'
-import TestimonialImage02 from '../../public/images/testimonial-02.jpg'
-import TestimonialImage03 from '../../public/images/testimonial-03.jpg'
+import TestimonialImage01 from '../assets/images/testimonial-01.jpg'
+import TestimonialImage02 from '../assets/images/testimonial-02.jpg'
+import TestimonialImage03 from '../assets/images/testimonial-03.jpg'
 
 export const Testimonials: React.FC = () => {
     return (

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Features } from "../components/features";
+import { Services } from "../components/services";
 import { Hero } from "../components/hero";
 import { Footer } from "../components/home/Footer";
 import { Header } from "../components/home/Header";
@@ -18,7 +18,7 @@ export const Home: React.FC = () => {
       <div  className="flex flex-col min-h-screen font-inter antialiased bg-gray-800 text-gray-200 tracking-tight justify-between">
         <Header />
         <Hero />
-        <Features />
+        <Services />
        {/* <Zigzag /> */}
         <Testimonials />
         <main className="flex-grow">

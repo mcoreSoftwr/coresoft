@@ -1,4 +1,4 @@
-import sourceVideo from "../../public/videos/video.mp4";
+import sourceVideo from "../assets/videos/video.mp4";
 
 export const Hero: React.FC = () => {
     return (
