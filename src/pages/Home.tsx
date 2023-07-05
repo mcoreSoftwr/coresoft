@@ -7,6 +7,7 @@ import { Testimonials } from "../components/testimonials";
 import { Zigzag } from "../components/zigzag";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Technologies } from "../components/technologies";
 
 export const Home: React.FC = () => {
   useEffect(() => {
@@ -19,6 +20,7 @@ export const Home: React.FC = () => {
         <Header />
         <Hero />
         <Services />
+        <Technologies/>
        {/* <Zigzag /> */}
         <Testimonials />
         <main className="flex-grow">
