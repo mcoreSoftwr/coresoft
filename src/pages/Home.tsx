@@ -3,11 +3,11 @@ import { Services } from "../components/services";
 import { Hero } from "../components/hero";
 import { Footer } from "../components/home/Footer";
 import { Header } from "../components/home/Header";
-import { Testimonials } from "../components/testimonials";
-import { Zigzag } from "../components/zigzag";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Technologies } from "../components/technologies";
+import { Team } from "../components/team";
+import ContactForm from "../components/home/ContactForm";
 
 export const Home: React.FC = () => {
   useEffect(() => {
@@ -21,10 +21,8 @@ export const Home: React.FC = () => {
         <Hero />
         <Services />
         <Technologies/>
-       {/* <Zigzag /> */}
-        <Testimonials />
-        <main className="flex-grow">
-        </main>
+        <Team/>
+        <ContactForm/>
         <Footer />
       </div>
     </>
