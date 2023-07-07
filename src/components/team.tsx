@@ -2,11 +2,13 @@ import Prof1 from "../assets/images/prof1.jpg"
 import Prof2 from "../assets/images/prof2.jpg"
 import Prof3 from "../assets/images/prof3.jpg"
 import Prof4 from "../assets/images/prof4.jpg"
+import { SectionProps } from "../pages/Home"
 
 import { ProfItem } from "./professionalItem"
-export const Team: React.FC = () => {
+export const Team: React.FC<SectionProps> = (props:SectionProps) => {
+    const {sectionRef} = props;
     return (
-        <section>
+        <section ref={sectionRef}>
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="py-12 md:py-20">
 

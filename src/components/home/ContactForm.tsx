@@ -1,8 +1,12 @@
 import { ChangeEvent, FormEvent, useState } from 'react';
+import 'react-phone-number-input/style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import PhoneInput from 'react-phone-number-input'
 import { faUser, faPhone, faEnvelope, faBuilding, faGlobe, faMapMarkerAlt, faComments } from '@fortawesome/free-solid-svg-icons';
+import { SectionProps } from '../../pages/Home';
 
-const ContactForm: React.FC = () => {
+const ContactForm:  React.FC<SectionProps> = (props:SectionProps) => {
+    const {sectionRef} = props;
     const [formData, setFormData] = useState({
         name: '',
         phoneNumber: '',
@@ -27,6 +31,13 @@ const ContactForm: React.FC = () => {
         });
     };
 
+    const handlePhoneNumberChange = (e: string) => {
+        setFormData({
+            ...formData,
+            phoneNumber: e
+        });
+    };
+
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         // Aquí puedes agregar la lógica para enviar los datos del formulario
@@ -34,7 +45,7 @@ const ContactForm: React.FC = () => {
     };
 
     return (
-        <section>
+        <section ref={sectionRef}>
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="py-12 md:py-20">
 
@@ -54,7 +65,7 @@ const ContactForm: React.FC = () => {
                                     <input
                                         type="text"
                                         name="name"
-                                        placeholder="Nombre"
+                                        placeholder="Name"
                                         value={formData.name}
                                         onChange={handleInputChange}
                                         required
@@ -63,20 +74,14 @@ const ContactForm: React.FC = () => {
                                 </div>
                             </div>
                             <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-                                <div className="relative">
-                                    <span className="absolute left-0 top-0 h-full flex items-center pl-3">
-                                        <FontAwesomeIcon icon={faPhone} className="mr-2 text-gray-500" />
-                                    </span>
-                                    <input
-                                        type="tel"
-                                        name="phoneNumber"
-                                        placeholder="Número de Teléfono"
-                                        value={formData.phoneNumber}
-                                        onChange={handleInputChange}
-                                        required
-                                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 pl-10 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                    />
-                                </div>
+                                <PhoneInput
+                                    international
+                                    placeholder="Enter phone number"
+                                    defaultCountry='CO'
+                                    value={formData.phoneNumber}
+                                    onChange={handlePhoneNumberChange}
+                                    className='appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white'
+                                ></PhoneInput>
 
                             </div>
                             <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -87,7 +92,7 @@ const ContactForm: React.FC = () => {
                                     <input
                                         type="email"
                                         name="email"
-                                        placeholder="Correo Electrónico"
+                                        placeholder="Email"
                                         value={formData.email}
                                         onChange={handleInputChange}
                                         required
@@ -105,7 +110,7 @@ const ContactForm: React.FC = () => {
                                     <input
                                         type="text"
                                         name="country"
-                                        placeholder="País"
+                                        placeholder="Country"
                                         value={formData.country}
                                         onChange={handleInputChange}
                                         required
@@ -115,34 +120,34 @@ const ContactForm: React.FC = () => {
                             </div>
                             <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                                 <div className='relative'>
-                                <span className="absolute left-0 top-0 h-full flex items-center pl-3">
+                                    <span className="absolute left-0 top-0 h-full flex items-center pl-3">
                                         <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2 text-gray-500" />
                                     </span>
-                                <input
-                                    type="text"
-                                    name="city"
-                                    placeholder="Ciudad"
-                                    value={formData.city}
-                                    onChange={handleInputChange}
-                                    required
-                                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 pl-10 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                />
+                                    <input
+                                        type="text"
+                                        name="city"
+                                        placeholder="City"
+                                        value={formData.city}
+                                        onChange={handleInputChange}
+                                        required
+                                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 pl-10 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    />
                                 </div>
                             </div>
                             <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                                 <div className='relative'>
-                                <span className="absolute left-0 top-0 h-full flex items-center pl-3">
+                                    <span className="absolute left-0 top-0 h-full flex items-center pl-3">
                                         <FontAwesomeIcon icon={faBuilding} className="mr-2 text-gray-500" />
                                     </span>
-                                <input
-                                    type="text"
-                                    name="companyName"
-                                    placeholder="Nombre de la Empresa"
-                                    value={formData.companyName}
-                                    onChange={handleInputChange}
-                                    required
-                                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 pl-10 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                                />
+                                    <input
+                                        type="text"
+                                        name="companyName"
+                                        placeholder="Company Name"
+                                        value={formData.companyName}
+                                        onChange={handleInputChange}
+                                        required
+                                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 pl-10 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -150,7 +155,7 @@ const ContactForm: React.FC = () => {
                             <div className="w-full px-3">
                                 <textarea
                                     name="message"
-                                    placeholder="Mensaje"
+                                    placeholder="Message"
                                     value={formData.message}
                                     onChange={handleTextareaChange}
                                     required

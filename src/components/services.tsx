@@ -5,10 +5,14 @@ import Service3 from "../assets/images/service3.png"
 import Service4 from "../assets/images/service4.png"
 import Service5 from "../assets/images/service5.png"
 import Service6 from "../assets/images/service6.png"
-export const Services: React.FC = () => {
+import { SectionProps } from "../pages/Home"
+
+export const Services: React.FC<SectionProps> = (props: SectionProps) => {
+    const { sectionRef } = props;
+
     return (
-        <section>
-            <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <section ref={sectionRef}>
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 ">
                 <div className="py-12 md:py-20">
 
                     {/* Section header */}

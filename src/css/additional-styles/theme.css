@@ -6,7 +6,10 @@
 .form-radio:focus {
     @apply ring-0;
 }
-
+.PhoneInputInput{
+    background-color: #D9E3EA;
+    outline: none;
+}
 /* Hamburger button */
 .hamburger svg > *:nth-child(1),
 .hamburger svg > *:nth-child(2),

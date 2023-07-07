@@ -4,10 +4,12 @@ import Tech3 from "../assets/images/tech3.png"
 import Tech4 from "../assets/images/tech4.png"
 import Tech5 from "../assets/images/tech5.png"
 import Tech6 from "../assets/images/tech6.png"
+import { SectionProps } from "../pages/Home"
 import { TechItem } from "./technologyItem"
-export const Technologies: React.FC = () => {
+export const Technologies: React.FC<SectionProps> = (props: SectionProps) => {
+    const {sectionRef} = props;
     return (
-        <section>
+        <section ref={sectionRef}>
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="py-12 md:py-20">
 

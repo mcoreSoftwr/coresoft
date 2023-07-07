@@ -1,7 +1,18 @@
 import { Link } from "react-router-dom";
 import { MobileMenu } from "./MobileMenu";
+import { RefObject } from "react";
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+    scrollToSection: (ref: React.RefObject<HTMLElement>) => void;
+    section1Ref: RefObject<HTMLElement>;
+    section2Ref: RefObject<HTMLElement>;
+    section3Ref: RefObject<HTMLElement>;
+    section4Ref: RefObject<HTMLElement>;
+    section5Ref: RefObject<HTMLElement>;
+}
+
+export const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
+    const { scrollToSection, section1Ref, section2Ref, section3Ref, section4Ref, section5Ref } = props;
     return (
         <header className="top-0 sticky w-full z-30  shadow-gray-50 bg-gray-900">
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -22,7 +33,8 @@ export const Header: React.FC = () => {
                         <ul className="flex grow justify-end flex-wrap items-center">
                             <li>
                                 <Link
-                                    to="/signin"
+                                    to=""
+                                    onClick={() => scrollToSection(section1Ref)}
                                     className="font-medium text-blue-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
                                 >
                                     Inicio
@@ -30,7 +42,8 @@ export const Header: React.FC = () => {
                             </li>
                             <li>
                                 <Link
-                                    to="/signin"
+                                    to=""
+                                    onClick={() => scrollToSection(section2Ref)}
                                     className="font-medium text-blue-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
                                 >
                                     Nosotros
@@ -38,7 +51,8 @@ export const Header: React.FC = () => {
                             </li>
                             <li>
                                 <Link
-                                    to="/signin"
+                                    to=""
+                                    onClick={() => scrollToSection(section3Ref)}
                                     className="font-medium text-blue-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
                                 >
                                     Servicios
@@ -46,7 +60,17 @@ export const Header: React.FC = () => {
                             </li>
                             <li>
                                 <Link
-                                    to="/signin"
+                                    to=""
+                                    onClick={() => scrollToSection(section4Ref)}
+                                    className="font-medium text-blue-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
+                                >
+                                    Contacto
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to=""
+                                    onClick={() => scrollToSection(section5Ref)}
                                     className="font-medium text-blue-600 hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
                                 >
                                     Contacto
