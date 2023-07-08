@@ -1,6 +1,6 @@
 import { RefObject, useEffect, useRef } from "react";
 import { Services } from "../components/services";
-import { Hero } from "../components/hero";
+import { Introduction } from "../components/introduction";
 import { Footer } from "../components/home/Footer";
 import { Header } from "../components/home/Header";
 import AOS from "aos";
@@ -29,7 +29,13 @@ export const Home: React.FC = () => {
 
   const scrollToSection = (ref:React.RefObject<HTMLElement>) => {
     if (ref && ref.current) {
-      ref.current.scrollIntoView({ behavior: 'smooth' });
+      const headerHeight = document.querySelector("header")?.clientHeight || 0;
+      const scrollTop = ref.current.offsetTop - headerHeight;
+  
+      window.scrollTo({
+        top: scrollTop,
+        behavior: "smooth",
+      });
     }
   };
   return (
@@ -41,7 +47,7 @@ export const Home: React.FC = () => {
         section3Ref= {section3Ref}
         section4Ref= {section4Ref}
         section5Ref= {section5Ref}/>
-        <Hero sectionRef={section1Ref}/>
+        <Introduction sectionRef={section1Ref}/>
         <Services sectionRef={section2Ref}/>
         <Technologies sectionRef={section3Ref}/>
         <Team sectionRef={section4Ref}/>
