@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { HeaderProps } from "./Header";
 
-export const MobileMenu: React.FC = () => {
+export const MobileMenu: React.FC<HeaderProps> = (props: HeaderProps) => {
+    const { scrollToSection, section1Ref, section2Ref, section3Ref, section4Ref, section5Ref } = props;
     const [mobileNavOpen, setMobileNavOpen] = useState<boolean>(false)
 
     const trigger = useRef<HTMLButtonElement>(null)
@@ -53,42 +55,81 @@ export const MobileMenu: React.FC = () => {
             <nav
                 id="mobile-nav"
                 ref={mobileNav}
-                className=" absolute bg-gray-900 top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out "
+                className=" absolute bg-gray-900-transparent top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out "
                 style={mobileNavOpen ? { maxHeight: mobileNav.current?.scrollHeight, opacity: 1 } : { maxHeight: 0, opacity: 0.8 }}
             >
-                <ul className=" px-4 py-2">
+                <ul className="grid justify-center px-4 py-2">
                     <li>
                         <Link
-                            to="/signin"
+                            to=""
+                            onClick={() => {
+                                scrollToSection(section1Ref)
+                                setMobileNavOpen(false);
+                            }
+                            }
                             className="font-medium text-blue-600  hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
                         >
-                            Inicio
+                            Home
                         </Link>
+                        
                     </li>
+                    <div className="w-full border-b border-gray-400"></div>
                     <li>
                         <Link
-                            to="/signin"
+                            onClick={() => {
+                                scrollToSection(section2Ref)
+                                setMobileNavOpen(false);
+                            }
+                            }
+                            to=""
                             className="font-medium text-blue-600  hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
                         >
-                            Nosotros
+                            Services
                         </Link>
                     </li>
+                    <div className="w-full border-b border-gray-400"></div>
                     <li>
                         <Link
-                            to="/signin"
+                            onClick={() => {
+                                scrollToSection(section3Ref)
+                                setMobileNavOpen(false);
+                            }
+                            }
+                            to=""
                             className="font-medium text-blue-600  hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
                         >
-                            Servicios
+                            Technologies
                         </Link>
                     </li>
+                    <div className="w-full border-b border-gray-400"></div>
                     <li>
                         <Link
-                            to="/signin"
+                            onClick={() => {
+                                scrollToSection(section4Ref)
+                                setMobileNavOpen(false);
+                            }
+                            }
+                            to=""
                             className="font-medium text-blue-600  hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
                         >
-                            Contacto
+                            Team
                         </Link>
                     </li>
+                    <div className="w-full border-b border-gray-400"></div>
+                    <li>
+                        <Link
+                            onClick={() => {
+                                scrollToSection(section5Ref)
+                                setMobileNavOpen(false);
+                            }
+                            }
+                            to=""
+                            className="font-medium text-blue-600  hover:text-gray-200 px-4 py-3 flex items-center transition duration-150 ease-in-out"
+                        >
+                            Contact
+                        </Link>
+                    </li>
+                    
                 </ul>
             </nav>
         </div>

@@ -1,9 +1,11 @@
-import sourceVideo from "../../public/videos/video.mp4";
+import sourceVideo from "../assets/videos/video.mp4";
+import { SectionProps } from "../pages/Home";
 
-export const Hero: React.FC = () => {
+export const Introduction: React.FC<SectionProps> = (props:SectionProps) => {
+    const {sectionRef} = props;
     return (
         <>
-            <section>
+            <section ref={sectionRef} >
                 <div className="videoMain">
                     <div className="videoOverlay" /> 
                     <video src={sourceVideo}
