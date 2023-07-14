@@ -4,10 +4,9 @@ import { Home } from "../../pages/Home";
 export const PortfolioRouter: React.FC = () => {
   return (
     <Routes>
-      <Route path="/home" element={<Home />}>
+      <Route path="/*" element={<Home />}>
 
       </Route>
-      <Route path="/*" element={<Navigate to="/home" />} />
     </Routes>
   );
 };
