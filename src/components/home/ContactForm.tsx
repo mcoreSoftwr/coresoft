@@ -2,7 +2,7 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import 'react-phone-number-input/style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PhoneInput from 'react-phone-number-input'
-import { faUser, faPhone, faEnvelope, faBuilding, faGlobe, faMapMarkerAlt, faComments } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faEnvelope, faBuilding, faGlobe, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { SectionProps } from '../../pages/Home';
 
 const ContactForm:  React.FC<SectionProps> = (props:SectionProps) => {
